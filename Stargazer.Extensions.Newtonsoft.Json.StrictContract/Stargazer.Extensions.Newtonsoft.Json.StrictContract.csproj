@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <langversion>9</langversion>
+    <Authors>Stargazer</Authors>
+    <Company></Company>
+    <Product></Product>
+    <Description></Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Namotion.Reflection" Version="1.0.18" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
