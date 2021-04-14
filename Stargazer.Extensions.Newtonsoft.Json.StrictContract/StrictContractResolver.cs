@@ -6,12 +6,26 @@ using Newtonsoft.Json.Serialization;
 
 namespace Stargazer.Extensions.Newtonsoft.Json.Strict
 {
-    public class StrictContractResolver : CamelCasePropertyNamesContractResolver
+    public class StrictContractResolver : IContractResolver
     {
-        protected override JsonObjectContract CreateObjectContract(Type objectType)
+        private readonly IContractResolver _backingResolver;
+
+        public StrictContractResolver(IContractResolver backingResolver)
         {
-            var contract = base.CreateObjectContract(objectType);
-            foreach(var prop in contract.Properties)
+            _backingResolver = backingResolver;
+        }
+
+        public StrictContractResolver() : this(new DefaultContractResolver())
+        {
+        }
+
+        public JsonContract ResolveContract(Type type)
+        {
+            var contract = _backingResolver.ResolveContract(type);
+            if(contract is not JsonObjectContract objectContract)
+                return contract;
+
+            foreach(var prop in objectContract.Properties)
             {
                 if(prop.DeclaringType!.GetMember(prop.UnderlyingName!).First().ToContextualMember().Nullability is Nullability.NotNullable)
                 {
@@ -19,21 +33,21 @@ namespace Stargazer.Extensions.Newtonsoft.Json.Strict
                     {
                         Required.Default => Required.DisallowNull,
                         Required.AllowNull => Required.Always,
-                        _ => prop.Required
+                        { } x => x
                     };
                 }
 
-                if(contract.CreatorParameters.Any(x => string.Equals(x.UnderlyingName, prop.UnderlyingName, StringComparison.OrdinalIgnoreCase)))
+                if(objectContract.CreatorParameters.Any(x => string.Equals(x.UnderlyingName, prop.UnderlyingName, StringComparison.OrdinalIgnoreCase)))
                 {
                     prop.Required = prop.Required switch
                     {
                         Required.Default => Required.AllowNull,
                         Required.DisallowNull => Required.Always,
-                        _ => prop.Required
+                        { } x => x
                     };
                 }
             }
-            return contract;
+            return objectContract;
         }
     }
 }
