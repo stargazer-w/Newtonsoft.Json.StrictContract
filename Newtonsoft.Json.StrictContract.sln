@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stargazer.Extensions.Newtonsoft.Json.StrictContract", "Stargazer.Extensions.Newtonsoft.Json.StrictContract\Stargazer.Extensions.Newtonsoft.Json.StrictContract.csproj", "{5DBE6281-02A0-47AE-8D69-C61A4E23142A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stargazer.Extensions.Newtonsoft.Json.StrictContract", "src\Stargazer.Extensions.Newtonsoft.Json.StrictContract.csproj", "{5DBE6281-02A0-47AE-8D69-C61A4E23142A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stargazer.Extensions.Newtonsoft.Json.StrictContract.Tests", "Stargazer.Extensions.Newtonsoft.Json.StrictContract.Tests\Stargazer.Extensions.Newtonsoft.Json.StrictContract.Tests.csproj", "{1500CB55-ACC4-427E-94DA-B291126E9BA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stargazer.Extensions.Newtonsoft.Json.StrictContract.Tests", "test\Stargazer.Extensions.Newtonsoft.Json.StrictContract.Tests.csproj", "{1500CB55-ACC4-427E-94DA-B291126E9BA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

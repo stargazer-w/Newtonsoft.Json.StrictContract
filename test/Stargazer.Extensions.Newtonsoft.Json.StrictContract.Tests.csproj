@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Stargazer.Extensions.Newtonsoft.Json.StrictContract\Stargazer.Extensions.Newtonsoft.Json.StrictContract.csproj" />
+    <ProjectReference Include="..\src\Stargazer.Extensions.Newtonsoft.Json.StrictContract.csproj" />
   </ItemGroup>
 
 </Project>
