@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>9</LangVersion>
     <IsPackable>false</IsPackable>
+    <RootNamespace>Stargazer.Extensions.Newtonsoft.Json.StrictContract</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

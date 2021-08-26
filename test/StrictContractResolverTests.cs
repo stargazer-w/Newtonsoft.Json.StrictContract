@@ -1,13 +1,9 @@
 ﻿using Newtonsoft.Json;
 using NUnit.Framework;
-using Stargazer.Extensions.Newtonsoft.Json.Strict;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 #nullable enable
 
-namespace Stargazer.Extensions.Newtonsoft.Json.Strict
+namespace Stargazer.Extensions.Newtonsoft.Json.StrictContract
 {
     [TestFixture()]
     public class StrictContractResolverTests
